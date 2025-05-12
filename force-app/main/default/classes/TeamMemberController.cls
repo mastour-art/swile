@@ -1,4 +1,5 @@
-public with sharing class TeamMemberController {
+//without sharing, pour permettre aux managers de modifier l'enregistrement utilisateur
+public without sharing class TeamMemberController {
 
     @AuraEnabled(cacheable=true)
     public static List<User> getMyTeamMembers() {
