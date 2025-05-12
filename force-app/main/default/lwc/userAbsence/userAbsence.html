@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Membres de mon équipe" icon-name="standard:user">
+        <!-- Boutons à droite de l'en-tête -->
+        <div slot="actions">
+            <lightning-button
+                label="Marquer comme Absent"
+                onclick={handleMarkAbsent}
+                class="slds-m-left_small"
+            ></lightning-button>
+
+            <lightning-button
+                label="Marquer comme Présent"
+                onclick={handleMarkPresent}
+                class="slds-m-left_small"
+            ></lightning-button>
+        </div>
+
+        <!-- Tableau des utilisateurs -->
+        <lightning-datatable
+            key-field="Id"
+            data={users}
+            columns={columns}
+            onrowselection={handleRowSelection}
+            show-row-number-column="true"
+        ></lightning-datatable>
+    </lightning-card>
+</template>
