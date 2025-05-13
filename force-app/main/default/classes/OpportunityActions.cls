@@ -18,7 +18,7 @@ public with sharing class OpportunityActions {
                 TeamAssignmentService.selectNextAssociation(
                     assocsByKey.get(opp.Composite_Key__c)
                 );
-            if (assoc != null) {
+            if (assoc != null && opp.OwnerId != assoc.User__c) {
                 // Créer une copie de l'opportunité avec les modifications nécessaires
                 Opportunity updatedOpp = new Opportunity(
                     Id = opp.Id,

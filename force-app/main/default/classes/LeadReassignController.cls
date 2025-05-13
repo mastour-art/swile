@@ -5,7 +5,7 @@ public with sharing class LeadReassignController {
     public LeadReassignController(ApexPages.StandardController controller) {
         this.stdController = controller;
         // Inclure le champ Composite_Key__c
-        stdController.addFields(new List<String>{'Composite_Key__c'});
+        stdController.addFields(new List<String>{'Composite_Key__c','OwnerId'});
         this.currentLead = (Lead) stdController.getRecord();
     }
 

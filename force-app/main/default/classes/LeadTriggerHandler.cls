@@ -12,11 +12,12 @@ public with sharing class LeadTriggerHandler{
     
     public void OnBeforeInsert(List<Lead> newLead){
         system.debug('Lead Trigger On Before Insert');
+        LeadActions.assignLeads(newLead);
     }
 
     public void OnAfterInsert(List<Lead> newLead){
         system.debug('Lead Trigger On After Insert');
-        LeadActions.assignLeads(newLead);
+        
     }
 
     public void OnAfterUpdate( List<Lead> newLead, List<Lead> oldLead, Map<ID, Lead> newLeadMap , Map<ID, Lead> oldLeadMap ){
